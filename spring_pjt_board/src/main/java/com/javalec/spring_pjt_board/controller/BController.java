@@ -1,7 +1,11 @@
 package com.javalec.spring_pjt_board.controller;
 
+import java.sql.JDBCType;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +19,7 @@ import com.javalec.spring_pjt_board.command.BModifyCommand;
 import com.javalec.spring_pjt_board.command.BReplayCommand;
 import com.javalec.spring_pjt_board.command.BReplayViewCommand;
 import com.javalec.spring_pjt_board.command.BWriteCommand;
+import com.javalec.spring_pjt_board.utill.Constant;
 
 @Controller
 public class BController {
@@ -22,6 +27,13 @@ public class BController {
 	//각자작업을 시킬때 한번에 묶는거
 	BCommand command;
 	
+	public  JdbcTemplate template;  //jdbctemplate 추가  //이 템플릿을 어디서든 사용할 수있게 페키지를 만든다
+	
+	@Autowired  //bean이담겨야 한다.
+	public void setTemplete(JdbcTemplate template) {
+		this.template=template;//->서블릿 설정파일로 가라
+		Constant.template=this.template;//DB에 접근하기위한 설정은 이걸로 끝//servlet에서 설정값을 그대로 쓴다
+	}
 	
 	@RequestMapping("/list")
 	public String list(Model model) {

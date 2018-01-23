@@ -13,9 +13,13 @@ public class BDto {// DB를 만들때 클래스객체를 바꿔야하는데
 	int bGroup;
 	int bStep;
 	int bIndent;
-
-	public BDto(int bId, String bName, String bTitle, String bContent, Timestamp bDate, int bHit, int bGroup,
-			int bStep,int bIndent) {
+	
+	public BDto() {
+		
+	}
+	
+	public BDto(int bId, String bName, String bTitle, String bContent, Timestamp bDate, int bHit, int bGroup, int bStep, int bIndent) {
+		// TODO Auto-generated constructor stub
 		this.bId = bId;
 		this.bName = bName;
 		this.bTitle = bTitle;
@@ -23,25 +27,8 @@ public class BDto {// DB를 만들때 클래스객체를 바꿔야하는데
 		this.bDate = bDate;
 		this.bHit = bHit;
 		this.bGroup = bGroup;
-		this.bStep=bStep;
-		this.bIndent = bIndent;
-
-	}
-
-	public int getbStep() {
-		return bStep;
-	}
-
-	public void setbStep(int bStep) {
 		this.bStep = bStep;
-	}
-
-	public String getbContent() {
-		return bContent;
-	}
-
-	public void setbContent(String bContent) {
-		this.bContent = bContent;
+		this.bIndent = bIndent;
 	}
 
 	public int getbId() {
@@ -68,6 +55,14 @@ public class BDto {// DB를 만들때 클래스객체를 바꿔야하는데
 		this.bTitle = bTitle;
 	}
 
+	public String getbContent() {
+		return bContent;
+	}
+
+	public void setbContent(String bContent) {
+		this.bContent = bContent;
+	}
+
 	public Timestamp getbDate() {
 		return bDate;
 	}
@@ -92,6 +87,14 @@ public class BDto {// DB를 만들때 클래스객체를 바꿔야하는데
 		this.bGroup = bGroup;
 	}
 
+	public int getbStep() {
+		return bStep;
+	}
+
+	public void setbStep(int bStep) {
+		this.bStep = bStep;
+	}
+
 	public int getbIndent() {
 		return bIndent;
 	}
@@ -99,5 +102,5 @@ public class BDto {// DB를 만들때 클래스객체를 바꿔야하는데
 	public void setbIndent(int bIndent) {
 		this.bIndent = bIndent;
 	}
-
+	
 }
